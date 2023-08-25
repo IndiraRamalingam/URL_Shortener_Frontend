@@ -9,6 +9,7 @@ function SignUp() {
 const[name,setName]=useState('');
 const[email,setEmail]=useState('');
 const[password,setPassword]=useState('');
+const[cpassword,setCPassword]=useState('');
 const[msg,setMsg]=useState('');
 const[info,setInfo]=useState('');
 const[infor,setInfor]=useState('');
@@ -16,7 +17,10 @@ const[infor,setInfor]=useState('');
 
 const handleSignup =(event) =>{
   event.preventDefault(); 
-  signup({name,email,password})
+  if(password == cpassword)
+  {
+    signup({name,email,password})
+  } 
 }
 
 const signup =async({name,email,password}) =>{
@@ -24,13 +28,13 @@ const signup =async({name,email,password}) =>{
     try
     {
       console.log(name,email)
-        const response = await instance.authInstance.post('/signup',{name,email,password});
+        const response = await instance.authInstance.post('/users/signup',{name,email,password});
         setInfo(`Hi ${name}!! Your account activation link has been sent through Email. Please check your Inbox/Spam !!  `)
-        setInfor("Click here to Sign In")
         setMsg('')
     }
     catch(error)
     {
+      console.log(error)
         setMsg("Username/Email already exists")
     }
   }
@@ -97,6 +101,16 @@ const signup =async({name,email,password}) =>{
                     value={password}
                     placeholder='Password'
                     onChange={(event) => setPassword(event.target.value) }
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Control 
+                    size="lg"
+                    type='password'
+                    value={cpassword}
+                    placeholder='Confirm Password'
+                    onChange={(event) => setCPassword(event.target.value) }
                     />
                 </Form.Group>
                 

@@ -18,7 +18,7 @@ function ForgotPassword() {
     console.log(email)
     if(email!=""){
       try{
-          const response=await instance.authInstance.post('/forgot_password',{email});
+          const response=await instance.authInstance.post('/users/forgot_password',{email});
           setInfo(`Password Reset Link has to sent to your Email Id - ${email}`)
           setMsg('')
           }
@@ -69,7 +69,7 @@ function ForgotPassword() {
                     
                      <Link to="/signin">Back to SignIn</Link>
                     <br/><br/>
-                     <p><b>Note:</b> You will receive the Reset Password form through the above mentioned link only. So, Kindly enter your valid Email.</p>
+                     <p><b>Note:</b> You will receive the Reset Password form link through the above mentioned email only. So, Kindly enter your valid Email.</p>
                 </div>
       </Form>
     </div>

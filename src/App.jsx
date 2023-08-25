@@ -6,6 +6,7 @@ import SignIn from './components/user/SignIn';
 import ForgotPassword from './components/user/ForgotPassword';
 import ResetPassword from './components/user/ResetPassword';
 import ActivationPage from './components/user/ActivationPage';
+import Dashboard from './components/url/Dashboard';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/forgot_password' element={<ForgotPassword />} />
             <Route path='/reset_password/:token' element={<ResetPassword />} />
             <Route path='/activation_page/:token' element={<ActivationPage/>}/>
+            <Route path='/dashboard/:id' element={<Dashboard/>}/>
             <Route path="/" element={<Navigate to="/signin" replace />} />
           </Routes>
       

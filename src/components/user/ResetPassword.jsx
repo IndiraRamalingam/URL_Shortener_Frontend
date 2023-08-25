@@ -25,7 +25,7 @@ const resetpassword = async({password,token})=>{
     if(password !="" && token!="")
     {
         try{
-            const response=await instance.authInstance.post('/reset_password/:token',{password,token});   
+            const response=await instance.authInstance.post('/users/reset_password/:token',{password,token});   
             // console.log(response.data.message);
             // console.log(response.data);
             setInfo("Password has been updated successfully")

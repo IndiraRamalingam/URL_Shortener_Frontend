@@ -22,9 +22,13 @@ function SignIn() {
     {
       try
       {  
-          const response = await instance.authInstance.post('/signin',{email,password});
+          const response = await instance.authInstance.post('/users/signin',{email,password});
+          sessionStorage.setItem("token", response.data.token)
           if (response.status === 200) {
-            navigate("/welcome")
+            const response = await instance.protectedInstance.get('/url/getId');
+            const res=response.data;
+            const params_id=res.user_ID;
+            navigate(`/dashboard/${params_id}`)
           }   
       }
       catch(error)

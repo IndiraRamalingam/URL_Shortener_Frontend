@@ -14,7 +14,8 @@ const handleActivate =(event)=>{
 
 const activate = async({token})=>{
     try{
-        const response = await instance.authInstance.post('/accountVerify/:token',{token});
+        const response = await instance.authInstance.post('/users/accountVerify/:token',{token});
+        window.confirm("Your account has been activated successfully..!!!!")
         console.log("Sucesssssss")
         navigate(`/signin`)
     }
@@ -32,7 +33,7 @@ const activate = async({token})=>{
         <h1 className='mt-5'>URL SHORTENER APP</h1>
         <h4 className='mt-5'>Please click the activation button below to activate your account.</h4>
         <div className='mt-5'>
-        <button className="btn btn-primary mb-5" onClick={handleActivate}>Click to Login</button>
+        <button className="btn btn-primary mb-5" onClick={handleActivate}>Click to Activate</button>
         </div>
         </div>
     </div>
