@@ -33,19 +33,19 @@ function ForgotPassword() {
 }
 
   const formStyles = {
-    background: "whitesmoke",
-    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37)",
-    width: "28rem",
-    padding: "2rem",
-    borderRadius: "1rem",
-    margin: "0rem 1.5rem",
+    background: "white",
+    width: "40rem",
+    borderRadius: "2rem",  
   };
 
   return (
-    <div className="mx-auto col-10 col-md-8 col-lg-4 mt-5" style={formStyles}>
+    <section className="container h-100">
+    <div className="row d-flex justify-content-center align-items-center h-100">
+    <h1 className="mt-5 mb-5" style={{color:"#ffe099",'fontWeight':'bolder','textAlign':'center'}}>uShortener <span style={{fontSize:'15px',fontStyle:'italic',color:'beige'}}>- A URL Shortener</span></h1>
+      <div className="p-md-5" style={formStyles} >
       <Form onSubmit={handleForgotpassword}>
              <div>
-                <h4 style={{ textAlign: "center" }}>FORGOT PASSWORD PAGE</h4>
+             <h3 className="mb-3 text-uppercase" style={{color:"#0d6efd",'fontWeight':'bolder','textAlign':'center',fontStyle:'italic'}}>FORGOT PASSWORD PAGE</h3>
                 <br/>
               </div>
                 <Form.Group className="mb-3">
@@ -61,18 +61,24 @@ function ForgotPassword() {
                  <p style={{ color: "red" }}>{msg}</p>
                   <p style={{ color: "green" }}>{info}</p>
                 
-                 <div className="text-center">
-                    <Button variant="primary" type="submit">
+                 <div className="text-center mt-4">
+                    <Button variant="warning" type="submit">
                       Send Email
                     </Button>
-                    <br/><br/>
                     
-                     <Link to="/signin">Back to SignIn</Link>
-                    <br/><br/>
-                     <p><b>Note:</b> You will receive the Reset Password form link through the above mentioned email only. So, Kindly enter your valid Email.</p>
-                </div>
+                    <div className='mt-4' style={{'fontSize':'17px'}}>
+                        <Link to="/signin">Back to SignIn</Link>
+                    </div>
+                    
+                    <div className='mt-4' style={{'fontSize':'17px'}}>
+                     <p><b>Note:</b> <i>You will receive the Reset Password form link through the above mentioned email only. So, Kindly enter your valid Email.</i></p>
+                     </div>
+
+              </div>
       </Form>
     </div>
+    </div>
+    </section>
   )
 }
 

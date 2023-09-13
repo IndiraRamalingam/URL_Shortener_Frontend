@@ -16,7 +16,6 @@ const activate = async({token})=>{
     try{
         const response = await instance.authInstance.post('/users/accountVerify/:token',{token});
         window.confirm("Your account has been activated successfully..!!!!")
-        console.log("Sucesssssss")
         navigate(`/signin`)
     }
     catch(error)
@@ -25,15 +24,14 @@ const activate = async({token})=>{
     }
 }
 
-
   return (
     <>
     <div className='container '>
         <div className='card mt-5' style={{textAlign:'center'}}>
-        <h1 className='mt-5'>URL SHORTENER APP</h1>
-        <h4 className='mt-5'>Please click the activation button below to activate your account.</h4>
-        <div className='mt-5'>
-        <button className="btn btn-primary mb-5" onClick={handleActivate}>Click to Activate</button>
+        <h1 className="mt-5 mb-5" style={{color:"#ffe099",'fontWeight':'bolder','textAlign':'center'}}>uShortener <span style={{fontSize:'15px',fontStyle:'italic',color:'beige'}}>- A URL Shortener</span></h1>
+        <h4 className='mt-2'>Please click the activation button below to activate your account.</h4>
+        <div className='mt-5 mb-5'>
+        <button className="btn btn-lg btn-success mb-5" onClick={handleActivate}>Click to Activate</button>
         </div>
         </div>
     </div>

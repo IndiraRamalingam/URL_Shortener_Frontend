@@ -48,21 +48,21 @@ function SignIn() {
     }  
   }
 
-  const formStyles = {
-    background: "whitesmoke",
-    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37)",
-    width: "28rem",
-    padding: "2rem",
-    borderRadius: "1rem",
-    margin: "0rem 1.5rem",
+  const formStyles = {    
+    background: "white",
+    width: "40rem",
+    borderRadius: "2rem",  
   };
 
     return (
       <>
-        <div className="mx-auto col-10 col-md-8 col-lg-4 mt-5" style={formStyles}>
+      <section className="container h-100">
+      <div className="row d-flex justify-content-center align-items-center h-100">
+      <h1 className="mt-5 mb-5" style={{color:"#ffe099",'fontWeight':'bolder','textAlign':'center'}}>uShortener <span style={{fontSize:'15px',fontStyle:'italic',color:'beige'}}>- A URL Shortener</span></h1>
+        <div className="p-md-5" style={formStyles} >
             <Form onSubmit={handleSignin}>
               <div>
-                <h4 style={{ textAlign: "center" }}>LOGIN PAGE</h4>
+                <h3 className="mb-4 text-uppercase" style={{color:"#0d6efd",'fontWeight':'bolder','textAlign':'center','fontStyle':'italic'}}>LOGIN PAGE</h3>
                 <br/>
               </div>
                 <Form.Group className="mb-3">
@@ -87,18 +87,28 @@ function SignIn() {
                 
                 <p style={{ color: "red" }}>{msg}</p>
 
-                <div className="text-center">
+                <div className="text-center mt-4">
                     <Button variant="primary" type="submit">
-                      Sign In
+                      SIGN IN
                     </Button>
-                    <br/><br/>
-                    <Link to='/forgot_password'>Forgot Password</Link>
-                    <br/><br/>
-                    <p>_________________________OR__________________________</p>
-                    <p>New User? <Link to="/signup">Sign Up</Link></p>
+
+                    <div className='mt-4' style={{'fontSize':'17px'}}>
+                        <Link to='/forgot_password'>Forgot Password</Link>
+                    </div>
+
+                    <div className='mt-4' style={{'fontSize':'17px'}}>
+                        <p>_________________________OR__________________________</p>
+                    </div>
+
+                    <div className='mt-4' style={{'fontSize':'17px'}}>
+                        <p>New User? <Link to="/signup">Sign Up</Link></p>
+                    </div>
+                    
                 </div>
               </Form>           
         </div>
+        </div>
+        </section>
       </>
     )
   }
