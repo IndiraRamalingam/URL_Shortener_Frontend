@@ -54,7 +54,7 @@ function ViewUrls() {
                 <td>{idx+1}</td>
               <td>{url.longURL}</td>
               <td>
-                <a href={`${baseURL}/${url.shortId}`} target='_blank' rel="noreferrer">{url.shortURL}</a>
+                <a href={`${baseURL}/${url.shortId}`} target='_blank' rel="noreferrer">{url.shortId}</a>
               </td>
               <td>{url.clicks}</td>
             </tr>
