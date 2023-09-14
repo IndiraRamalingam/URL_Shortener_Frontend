@@ -1,8 +1,11 @@
-# React + Vite
+# uShortener
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+User has to create a account and once the account has created activation link will be sent to the entered Mail ID. After the activation of account,can able to shorten the lengthy URL and also display the list of generated URLS, Count of URL's generated on month and day basis. User can also able to reset the password using Forgot Password Option.
 
-Currently, two official plugins are available:
+Netlify URL --> https://ushortener.netlify.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Render URL --> https://ushorten.onrender.com
+
+Backend Source Code --> https://github.com/IndiraRamalingam/URL_Shortener_Backend
+
+
